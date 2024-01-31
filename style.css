@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variaveis para modo dark */
+:root {
+  --background: url(./assets/bg-desktop.png);
+  --stroke-color: #ffffff;
+  --text-color: #ffffff;
+  --highlight-color: rgba(255, 255, 255, 0.1);
+  --icon: url(./assets/moon-stars.svg);
+}
+
+/* Variaveis para modo light */
+.light-mode {
+  --background: url(./assets/bg-desktop-light.png);
+  --stroke-color: #393939;
+  --text-color: #393939;
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --icon: url(./assets/sun.svg);
+}
+
+body {
+  background: var(--background) no-repeat center/ cover;
+  height: 100vh;
+  width: 100%;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 30px 20px;
+  margin: 0 auto;
+  gap: 20px;
+  border: solid 1px red;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 15px;
+}
+
+.avatar img {
+  width: 150px;
+}
+
+.avatar p {
+  color: var(--text-color);
+}
+
+/* fazer switch por final */
+
+.switch {
+  border: solid 1px red;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch button {
+  background: #ffffff var(--icon) no-repeat center center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  animation: slide-in 0.2s;
+}
+
+.light-mode .switch button {
+  animation: slide-back 0.4s forwards;
+}
+
+.switch span {
+  display: block;
+  border: solid 1px var(--stroke-color);
+  background: var(--highlight-color);
+  width: 60px;
+  height: 20px;
+  border-radius: 20px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 10px;
+  width: 100%;
+}
+
+.links a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  padding: 14px 24px;
+  text-decoration: none;
+  color: var(--text-color);
+  border: solid 1px var(--stroke-color);
+  border-radius: 20px;
+  backdrop-filter: blur(0.2);
+  background: var(--highlight-color);
+}
+
+.creditos p {
+  color: var(--text-color);
+}
+
+@keyframes slide-in {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@media (min-width: 700px) {
+  :root {
+    --background: url("./assets/bg-mobile.png");
+  }
+
+  .light-mode {
+    --background: url("./assets/bg-mobile-light.png");
+  }
+}
