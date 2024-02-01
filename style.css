@@ -9,17 +9,17 @@
   --background: url(./assets/bg-light.png);
   --stroke-color: #ffffff;
   --text-color: #ffffff;
-  --highlight-color: rgba(255, 255, 255, 0.1);
-  --icon: url(./assets/moon-stars.svg);
+  --highlight-color: rgba(0, 0, 0, 0.2);
+  --icon: url(./assets/sun.svg);
 }
 
 /* Variaveis para modo light */
-.light-mode {
+.dark-mode {
   --background: url(./assets/bg-light.png);
   --stroke-color: #393939;
   --text-color: #393939;
-  --highlight-color: rgba(0, 0, 0, 0.1);
-  --icon: url(./assets/sun.svg);
+  --highlight-color: rgba(255, 255, 255, 0.5);
+  --icon: url(./assets/moon-stars.svg);
 }
 
 .poppins-regular {
@@ -40,10 +40,20 @@ body * {
   font-style: normal;
 }
 
-body {
-  background: var(--background) no-repeat center/ cover;
-  height: 100vh;
+.background {
+  animation: hue-ani 10s forwards;
   width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: 20s;
+}
+
+.dark-mode .background {
+  animation: dark-fil 0.2s forwards;
 }
 
 #container {
@@ -52,8 +62,12 @@ body {
   align-items: center;
   flex-flow: column nowrap;
   padding: 30px 20px;
-  margin: 0 auto;
+  margin: 30px auto 20px;
   gap: 20px;
+  z-index: 10;
+  background: var(--highlight-color);
+  max-width: 500px;
+  border-radius: 20px;
 }
 
 .avatar {
@@ -96,7 +110,7 @@ body {
   animation: slide-in 0.2s;
 }
 
-.light-mode .switch button {
+.dark-mode .switch button {
   animation: slide-back 0.4s forwards;
 }
 
@@ -114,7 +128,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: column nowrap;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
 }
 
@@ -127,7 +141,7 @@ body {
   padding: 14px 24px;
   text-decoration: none;
   color: var(--text-color);
-  border: solid 1px var(--stroke-color);
+  border: solid 0.5px var(--stroke-color);
   border-radius: 20px;
   backdrop-filter: blur(0.2);
   background: var(--highlight-color);
@@ -158,33 +172,48 @@ body {
   }
 }
 
-@keyframes hue {
+@keyframes hue-ani {
   0% {
+    filter: grayscale(100%);
     filter: hue-rotate(0deg);
   }
 
   10% {
+    filter: grayscale(50%);
     filter: hue-rotate(100deg);
   }
 
-  20% {
+  15% {
+    filter: grayscale(0%);
     filter: hue-rotate(200deg);
   }
 
-  30% {
+  20% {
     filter: hue-rotate(300deg);
   }
 
-  40% {
+  25% {
     filter: hue-rotate(400deg);
   }
 
-  50% {
+  40% {
     filter: hue-rotate(500deg);
   }
 
   100% {
-    filter: hue-rotate(-0.25turn);
+    filter: hue-rotate(-0.225turn);
+  }
+}
+
+@keyframes dark-fil {
+  from {
+    filter: blur(0);
+    filter: grayscale(10%);
+  }
+
+  to {
+    filter: blur(1.4rem);
+    filter: grayscale(100%);
   }
 }
 
