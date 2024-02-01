@@ -6,7 +6,7 @@
 
 /* Variaveis para modo dark */
 :root {
-  --background: url(./assets/bg-desktop.png);
+  --background: url(./assets/bg-light.png);
   --stroke-color: #ffffff;
   --text-color: #ffffff;
   --highlight-color: rgba(255, 255, 255, 0.1);
@@ -15,11 +15,29 @@
 
 /* Variaveis para modo light */
 .light-mode {
-  --background: url(./assets/bg-desktop-light.png);
+  --background: url(./assets/bg-light.png);
   --stroke-color: #393939;
   --text-color: #393939;
   --highlight-color: rgba(0, 0, 0, 0.1);
   --icon: url(./assets/sun.svg);
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body * {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -36,7 +54,6 @@ body {
   padding: 30px 20px;
   margin: 0 auto;
   gap: 20px;
-  border: solid 1px red;
 }
 
 .avatar {
@@ -53,12 +70,14 @@ body {
 
 .avatar p {
   color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 /* fazer switch por final */
 
 .switch {
-  border: solid 1px red;
   position: relative;
   display: flex;
   justify-content: center;
@@ -116,6 +135,9 @@ body {
 
 .creditos p {
   color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 @keyframes slide-in {
@@ -133,6 +155,36 @@ body {
   }
   to {
     left: 50%;
+  }
+}
+
+@keyframes hue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  10% {
+    filter: hue-rotate(100deg);
+  }
+
+  20% {
+    filter: hue-rotate(200deg);
+  }
+
+  30% {
+    filter: hue-rotate(300deg);
+  }
+
+  40% {
+    filter: hue-rotate(400deg);
+  }
+
+  50% {
+    filter: hue-rotate(500deg);
+  }
+
+  100% {
+    filter: hue-rotate(-0.25turn);
   }
 }
 
