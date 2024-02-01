@@ -7,9 +7,9 @@
 /* Variaveis para modo dark */
 :root {
   --background: url(./assets/bg-light.png);
-  --stroke-color: #ffffff;
-  --text-color: #ffffff;
-  --highlight-color: rgba(255, 255, 255, 0.1);
+  --stroke-color: #000000;
+  --text-color: #000000;
+  --highlight-color: rgba(255, 255, 255, 0.8);
   --icon: url(./assets/sun.svg);
 }
 
@@ -18,7 +18,7 @@
   --background: url(./assets/bg-light.png);
   --stroke-color: #ffffff;
   --text-color: #ffffff;
-  --highlight-color: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.8);
   --icon: url(./assets/moon-stars.svg);
 }
 
@@ -67,6 +67,7 @@ body * {
   z-index: 10;
   max-width: 500px;
   border-radius: 20px;
+  background: var(--highlight-color);
 }
 
 .avatar {
@@ -146,6 +147,11 @@ body * {
   border-radius: 20px;
   backdrop-filter: blur(0.2);
   background: var(--highlight-color);
+  transition: 0.2s;
+}
+
+.links a:hover {
+  filter: invert(1);
 }
 
 .social a {
@@ -159,6 +165,11 @@ body * {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.2s;
+}
+
+.social a:hover {
+  filter: invert(1);
 }
 
 .creditos p {
