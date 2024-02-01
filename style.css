@@ -9,16 +9,16 @@
   --background: url(./assets/bg-light.png);
   --stroke-color: #ffffff;
   --text-color: #ffffff;
-  --highlight-color: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(255, 255, 255, 0.1);
   --icon: url(./assets/sun.svg);
 }
 
 /* Variaveis para modo light */
 .dark-mode {
   --background: url(./assets/bg-light.png);
-  --stroke-color: #393939;
-  --text-color: #393939;
-  --highlight-color: rgba(255, 255, 255, 0.5);
+  --stroke-color: #ffffff;
+  --text-color: #ffffff;
+  --highlight-color: rgba(0, 0, 0, 0.2);
   --icon: url(./assets/moon-stars.svg);
 }
 
@@ -62,10 +62,9 @@ body * {
   align-items: center;
   flex-flow: column nowrap;
   padding: 30px 20px;
-  margin: 30px auto 20px;
+  margin: 30px auto;
   gap: 20px;
   z-index: 10;
-  background: var(--highlight-color);
   max-width: 500px;
   border-radius: 20px;
 }
@@ -83,7 +82,7 @@ body * {
 }
 
 .avatar p {
-  color: var(--text-color);
+  color: var(--stroke-color);
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -96,9 +95,11 @@ body * {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .switch button {
+  cursor: pointer;
   background: #ffffff var(--icon) no-repeat center center;
   width: 32px;
   height: 32px;
@@ -147,8 +148,21 @@ body * {
   background: var(--highlight-color);
 }
 
+.social a {
+  text-decoration: none;
+  color: var(--stroke-color);
+  border: solid 2px var(--stroke-color);
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .creditos p {
-  color: var(--text-color);
+  color: var(--stroke-color);
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;

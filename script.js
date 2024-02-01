@@ -11,11 +11,11 @@ function togglebtn() {
   // html.classList.toggle('light-mode');
 
   // trocar imagem de avatar light/dark
-  if (html.classList.contains("dark-mode")) {
-    const img = document.querySelector(".avatar img")
-    img.src = "./assets/avatar-light.jpg"
-  } else {
-    const img = document.querySelector(".avatar img")
-    img.src = "./assets/avatar.jpg"
-  }
+  // if (html.classList.contains("dark-mode")) {
+  //   const img = document.querySelector(".avatar img")
+  //   img.src = "./assets/avatar-light.jpg"
+  // } else {
+  //   const img = document.querySelector(".avatar img")
+  //   img.src = "./assets/avatar.jpg"
+  // }
 }
