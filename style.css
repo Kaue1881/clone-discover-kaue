@@ -40,6 +40,12 @@ body * {
   font-style: normal;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .background {
   animation: hue-ani 10s forwards;
   width: 100%;
@@ -62,7 +68,8 @@ body * {
   align-items: center;
   flex-flow: column nowrap;
   padding: 30px 20px;
-  margin: 30px auto;
+  width: 100%;
+  margin: 10px;
   gap: 20px;
   z-index: 10;
   max-width: 500px;
